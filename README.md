@@ -66,3 +66,4 @@ has one_to:purchase
 - belongs_to :users
 - belongs_to :purchase
 
+
