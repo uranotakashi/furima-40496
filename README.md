@@ -25,9 +25,9 @@ has_many    :purchases
 |description     |text         |null: false                                       |商品説明
 |category_id     |integer      |null: false                                       |カテゴリー
 |situation_id    |integer      |null: false                                       |商品の状態
-|shipping_fee    |integer      |null: false                                       |配送料の負担
-|delivery_area   |integer      |null: false                                       |発送元の地域
-|delivery_date   |integer      |null: false                                       |発送までの日数
+|shipping_fee_id |integer      |null: false                                       |配送料の負担
+|delivery_area_id|integer      |null: false                                       |発送元の地域
+|delivery_date_id|integer      |null: false                                       |発送までの日数
 |price           |integer      |null: false                                       |価格
 |user            |references   | null: false, foreign_key: true                   |※外部キー
 
@@ -55,7 +55,8 @@ has_one   :purchase
 
 | Column         | Type   | Options                        |
 |----------------|--------| ------------------------------ |
-|delivery_area   |integer |null: false                     |発送元の地域
+|delivery_area_id|integer |null: false                     |発送元の地域
+|zip code        |string  | null: false                    |郵便番号  
 |city            |string  | null: false                    |市区町村  
 |house_number    |string  | null: false                    |番地
 |building_name   |string  |                                |建物名
