@@ -55,6 +55,7 @@ has_one   :purchase
 
 | Column         | Type   | Options                        |
 |----------------|--------| ------------------------------ |
+|purchase_id     |integer |null: false                     |購入
 |delivery_area_id|integer |null: false                     |発送元の地域
 |zip code        |string  | null: false                    |郵便番号  
 |city            |string  | null: false                    |市区町村  
