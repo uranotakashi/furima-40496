@@ -53,15 +53,15 @@ has_one   :purchase
 
 ## shipping_addressesテーブル
 
-| Column         | Type   | Options                        |
-|----------------|--------| ------------------------------ |
-|purchase_id     |integer |null: false                     |購入
-|delivery_area_id|integer |null: false                     |発送元の地域
-|zip code        |string  | null: false                    |郵便番号  
-|city            |string  | null: false                    |市区町村  
-|house_number    |string  | null: false                    |番地
-|building_name   |string  |                                |建物名
-|telephone_number|string  | null: false                    |電話番号
+| Column         | Type       | Options                        |
+|----------------|------------| ------------------------------ |
+|item_id         |references  |null: false, foreign_key: true  |購入
+|delivery_area_id|integer     |null: false                     |発送元の地域
+|zip code        |string      |null: false                     |郵便番号  
+|city            |string      |null: false                     |市区町村  
+|house_number    |string      |null: false                     |番地
+|building_name   |string      |                                |建物名
+|telephone_number|string      |null: false                     |電話番号
 ### Association
 - belongs_to :purchase
 
