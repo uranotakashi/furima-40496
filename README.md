@@ -55,7 +55,7 @@ has_one   :purchase
 
 | Column         | Type       | Options                        |
 |----------------|------------| ------------------------------ |
-|item_id         |references  |null: false, foreign_key: true  |購入
+|purchase        |references  |null: false, foreign_key: true  |購入
 |delivery_area_id|integer     |null: false                     |発送元の地域
 |zip code        |string      |null: false                     |郵便番号  
 |city            |string      |null: false                     |市区町村  
