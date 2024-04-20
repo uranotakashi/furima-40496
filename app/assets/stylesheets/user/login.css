@@ -18,3 +18,8 @@
   text-align: center;
   color: red;
 }
+
+.form-wrap {
+  width: 50%;    
+  margin: 0 auto; 
+}
