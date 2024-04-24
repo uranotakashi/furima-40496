@@ -92,6 +92,36 @@ RSpec.describe Item, type: :model do
         expect(@item.errors.full_messages).to include('Price is not a number')
       end
 
+it 'categoryが初期値では登録できない' do
+  @item.category_id = '1'
+  @item.valid?
+  expect(@item.errors.full_messages).to include('Category can\'t be blank')
+end
+
+it 'situationが初期値では登録できない' do
+  @item.situation_id = '1'
+  @item.valid?
+  expect(@item.errors.full_messages).to include('Situation can\'t be blank')
+end
+
+it 'shipping feeが初期値では登録できない' do
+  @item.shipping_fee_id = '1'
+  @item.valid?
+  expect(@item.errors.full_messages).to include('Shipping fee can\'t be blank')
+end
+
+it 'delivery areaが初期値では登録できない' do
+  @item.delivery_area_id = '1'
+  @item.valid?
+  expect(@item.errors.full_messages).to include('Delivery area can\'t be blank')
+end
+
+it 'delivery dateが初期値では登録できない' do
+  @item.delivery_date_id = '1'
+  @item.valid?
+  expect(@item.errors.full_messages).to include('Delivery date can\'t be blank')
+end
+
     end
   end
 end
