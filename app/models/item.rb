@@ -23,6 +23,6 @@ class Item < ApplicationRecord
   belongs_to :delivery_date
   validates :delivery_date_id, numericality: { other_than: 1 , message: "can't be blank"}
 
-  has_one :purchase
+  # has_one :purchase
 
 end
