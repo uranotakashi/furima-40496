@@ -1,5 +1,6 @@
 class PurchasesController < ApplicationController
   before_action :authenticate_user!
+  before_action :redirect_if_own_item, only: [:index, :create]
 
   def index
     gon.public_key = ENV["PAYJP_PUBLIC_KEY"]
@@ -35,6 +36,27 @@ class PurchasesController < ApplicationController
     card: params[:token],  
     currency: 'jpy'                 
   )
+end
+  def redirect_if_own_item
+    @item = Item.find(params[:item_id])
+    if current_user == @item.user
+      redirect_to root_path
+    end
 
+    def redirect_if_own_item
+      @item = Item.find(params[:item_id])
+      if (current_user != @item.user) && (!@item.purchase.nil? && @item.purchase.sold_out?)
+        redirect_to root_path
+      end
+    end
+
+    def redirect_if_own_item
+      @item = Item.find(params[:item_id])
+      if (current_user != @item.user) && !@item.purchase.nil?
+        redirect_to root_path
+      end
+    end
+
+  end
 end
-end
+
