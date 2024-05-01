@@ -82,6 +82,17 @@ RSpec.describe PurchaseShippingAddress, type: :model do
                 expect(@purchase_shipping_address.errors.full_messages).to include("Token can't be blank")
               end
 
+              it "user_idが空では登録できないこと" do
+                @purchase_shipping_address.user = nil
+                @purchase_shipping_address.valid?
+                expect(@purchase_shipping_address.errors.full_messages).to include("User can't be blank")
+              end
+            
+              it "item_idが空では登録できないこと" do
+                @purchase_shipping_address.item = nil
+                @purchase_shipping_address.valid?
+                expect(@purchase_shipping_address.errors.full_messages).to include("Item can't be blank")
+              end
         end
     end
 end
