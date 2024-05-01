@@ -1,6 +1,6 @@
 FactoryBot.define do
   factory :item do
-    
+
     item_name           { 'Some item name' }
     description         { 'Some description' }
     category_id           {2}
@@ -13,7 +13,7 @@ FactoryBot.define do
     association :user 
 
     after(:build) do |item|
-      item.image.attach(io: File.open("#{Rails.root}/public/images/test_image.jpg"), filename: 'test_image.jpg', content_type: 'image/jpg')
+      item.image.attach(io: File.open("#{Rails.root}/public/images/test_image.jpg"), filename: 'test_image.jpg', content_type: 'image/jpeg')
     end
   end
 end
